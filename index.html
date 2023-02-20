@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>NTA - Display: flex nav</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui;
+      background-color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-evenly;
+      background-image: linear-gradient(to bottom,
+          black 5%,
+          grey 100%);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 0 0 25px 25px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    a.logo {
+      /* margin-bottom: 5px; */
+    }
+
+    nav {
+      display: inline-flex;
+    }
+
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: space-evenly;
+      width: 300px;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .sign-out-link:hover {
+      color: red;
+    }
+
+    .active {
+      padding: 35px 15px;
+      border-radius: 0 0 25px 25px;
+      background-color: Blue;
+      /* background-image: linear-gradient(to bottom,
+          red 0%,
+          purple 50%,
+          blue 100%); */
+      font-weight: bold;
+    }
+
+    @media (max-width: 460px) {}
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo"><i class="fa fa-eye-slash fa-2x"></i></a>
+    <nav>
+      <ul>
+        <li><a class="active" href="recipes.html">Recipes</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="delivery.html">Delivery</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="sign-out-link">Sign Out</a>
+  </header>
+
+  <script>
+    let mainNav = document.querySelectorAll("nav a");
+    let body = document.querySelector("body");
+    document.addEventListener("click", handleClicks);
+
+    function handleClicks(event) {
+      event.preventDefault();
+      if (event.target.matches("nav a")) {
+        for (let navItem of mainNav) {
+          navItem.classList.remove("active");
+        }
+        event.target.classList.add("active");
+
+        if (event.target.matches("[href='reviews.html']")) {
+          body.style.backgroundColor = "WhiteSmoke";
+        } else if (event.target.matches("[href='delivery.html']")) {
+          body.style.backgroundColor = "LightGray";
+        } else { body.style.backgroundColor = "white"; }
+      }
+    }
+  </script>
+</body>
+
+</html>
