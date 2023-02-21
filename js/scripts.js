@@ -1,7 +1,7 @@
 const mainNav = document.querySelectorAll("nav a");
 const body = document.querySelector("body");
 const startButton = document.querySelector(".start-stop");
-let grid = document.querySelectorAll("section div");
+const grid = document.querySelectorAll("section div");
 
 let start = false;
 let speed = "";
