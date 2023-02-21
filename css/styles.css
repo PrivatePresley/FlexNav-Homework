@@ -41,15 +41,15 @@ li {
   transition: color 0.5s;
 }
 
+.logo {
+  margin-right: 5px;
+}
+
 .active {
   border-radius: 25px;
   background-image: linear-gradient(to top, black 5%, red 100%);
   font-weight: bold;
   padding: 10px 15px;
-}
-
-.logo {
-  margin-left: 5px;
 }
 
 @media (max-width: 282px) {
